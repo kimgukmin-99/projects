@@ -1,4 +1,72 @@
-<div>
-    메인페이지 입니다.
-    개발중입니다.
-</div>
+<head>
+  <!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Bootstrap JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+{% extends 'base.html' %}
+{% block content %}
+  <!-- carousel를 구성할 영역 설정 -->
+  <div style="width: auto; height: auto; margin: 10px; margin-top:50px;">
+
+    <div id="carousel-example-generic" class="carousel slide" >
+      <!-- carousel의 지시자 -->
+      <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      </ol>
+      <!-- 실제 이미지 아이템 -->
+      <!-- class는 carousel-inner로 설정하고 role은 listbox에서 설정한다. -->
+      <div class="carousel-inner" role="listbox" style="height: 300px;">
+        <!-- 이미지의 개수만큼 item을 만든다. 중요한 포인트는 carousel-indicators의 li 태그 개수와 item의 개수는 일치해야 한다. -->
+        <div class="item active">
+          <!-- 아미지 설정- -->
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMTZfMTAw%2FMDAxNjc4OTY0OTA0MzIy.VALBe33jaWwX3X9wz3pH7VsxCc9YWvb8qZeLtqf22lAg.VKCNkhSNf_WkLaZc0SgbjTN66tJIfe5yrdxFITncWcgg.PNG.bombqpg0%2F20230316_141722.png&type=l340_165" style="width:100%">
+          <!-- 캡션 설정 (생략 가능) -->
+          <!-- 글자 색은 검은색 -->
+          <div class="carousel-caption" style="color:black;">
+           멍멍
+          </div>
+        </div>
+        <div class="item">
+          <img src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyMzAzMDVfMTY4%2FMDAxNjc4MDEyNzk3NjU0.HNnTZYpg3rxHUGfU9RgMJVdBs-euNkdZ9DpYzzaNPUQg.hXH8w0b3uGq0NosuExB9BtXS0IuhRs_tiQH1NK0ilNog.PNG.dhrkfl88%2Fimage.png&type=a340" style="width:100%">
+          <div class="carousel-caption" style="color:black;">
+          멍멍멍!
+          </div>
+        </div>
+      </div>
+      <!-- 왼쪽 화살표 버튼 -->
+
+      <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <!-- 왼쪽 화살표 -->
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </a>
+      <!-- 오른쪽 화살표 버튼 -->
+
+      <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <!-- 오른쪽 화살표 -->
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
+    </div>
+  </div>
+  <script>
+    $(function(){
+      // 이미지 슬라이드 컨트롤를 사용하기 위해서는 carousel를 실행해야한다.
+      $('#carousel-example-generic').carousel({
+        // 슬리아딩 자동 순환 지연 시간
+        // false면 자동 순환하지 않는다.
+        interval: 4000,
+        // hover를 설정하면 마우스를 가져대면 자동 순환이 멈춘다.
+        pause: "hover",
+        // 순환 설정, true면 1 -> 2가면 다시 1로 돌아가서 반복
+        wrap: true,
+        // 키보드 이벤트 설정 여부(?)
+        keyboard : true
+	  });
+	});
+  </script>
+{% endblock %}
